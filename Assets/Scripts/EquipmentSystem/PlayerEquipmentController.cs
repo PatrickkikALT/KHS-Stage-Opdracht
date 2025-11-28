@@ -47,7 +47,6 @@ public class PlayerEquipmentController : MonoBehaviour {
       TryPerformReload(slot, opposite);
       return;
     }
-
     if (held) {
       if (instance.TryGetComponent(out IUsableItem usable)) {
         usable.UsePrimary();

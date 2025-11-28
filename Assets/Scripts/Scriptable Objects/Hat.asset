@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a0ea7abdd9261c42bba21836171ac57, type: 3}
   m_Name: Hat
   m_EditorClassIdentifier: Assembly-CSharp::EquipmentItem
-  itemName: 
-  prefab: {fileID: 0}
+  itemName: Hat
+  prefab: {fileID: 3728679306021573736, guid: 8a58f78fbd1063145822a3da8add6832, type: 3}
   isUsable: 0
-  itemType: 0
+  itemType: 4

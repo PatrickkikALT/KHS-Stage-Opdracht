@@ -19,6 +19,12 @@ public class PlayerPickupController : MonoBehaviour {
   private void TryEquipItem(PickupItem pickup) {
     EquipmentItem data = pickup.itemData;
     
+    if (data.itemType == ItemType.Hat && !equipment.GetItemInstance(EquipmentSlot.Head)) {
+      equipment.Equip(data, EquipmentSlot.Head);
+      pickup.OnPickedUp(out GameObject obj);
+      equipment.headWorldItem = obj;
+      return;
+    }
     if (!equipment.GetItemInstance(EquipmentSlot.LeftHand)) {
       equipment.Equip(data, EquipmentSlot.LeftHand);
       pickup.OnPickedUp(out GameObject obj);
@@ -33,12 +39,6 @@ public class PlayerPickupController : MonoBehaviour {
       return;
     }
     
-    if (data.itemType == ItemType.Hat && !equipment.GetItemInstance(EquipmentSlot.Head)) {
-      equipment.Equip(data, EquipmentSlot.Head);
-      pickup.OnPickedUp(out GameObject obj);
-      equipment.headWorldItem = obj;
-      return;
-    }
     
   }
 }
